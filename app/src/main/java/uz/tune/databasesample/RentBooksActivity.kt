@@ -17,6 +17,7 @@ class RentBooksActivity : AppCompatActivity() {
     private var studentList: List<Student>? = emptyList()
 
     // nimadir kod Ismoil yozdi
+    // dev2 kodi yozildi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
