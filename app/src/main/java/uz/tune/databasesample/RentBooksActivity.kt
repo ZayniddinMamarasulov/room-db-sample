@@ -16,8 +16,6 @@ class RentBooksActivity : AppCompatActivity() {
     private var bookList: List<Book>? = emptyList()
     private var studentList: List<Student>? = emptyList()
 
-    // nimadir kod Ismoil yozdi
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rent_books)
@@ -27,18 +25,22 @@ class RentBooksActivity : AppCompatActivity() {
         bookList = database?.bookDao()?.getBooks()
         studentList = database?.studentDao()?.getStudents()
 
-        val studentsAndBooksReference =
-            studentList?.get(0)?.studentId?.let {
-                bookList?.get(0)?.bookId?.let { it1 ->
-                    StudentBooksReference(
-                        it,
-                        it1
-                    )
+        try {
+            val studentsAndBooksReference =
+                studentList?.get(0)?.studentId?.let {
+                    bookList?.get(0)?.bookId?.let { it1 ->
+                        StudentBooksReference(
+                            it,
+                            it1
+                        )
+                    }
                 }
+            if (studentsAndBooksReference != null) {
+                database?.studentDao()?.insertStudentBookCrossRef(studentsAndBooksReference)
             }
+        } catch (e: Exception) {
 
-        if (studentsAndBooksReference != null) {
-            database?.studentDao()?.insertStudentBookCrossRef(studentsAndBooksReference)
         }
+
     }
 }
