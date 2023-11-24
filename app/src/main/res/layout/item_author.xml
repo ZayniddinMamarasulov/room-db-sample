@@ -10,7 +10,8 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:fontFamily="@font/alata"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="G'ofur G'ulom" />
@@ -19,35 +20,46 @@
         android:id="@+id/tv_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/tv_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_name"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/alata"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
         tools:text="Toshkent" />
 
-    <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:text="Edit"
-        app:layout_constraintEnd_toStartOf="@id/btn_delete"
-        app:layout_constraintTop_toTopOf="@id/btn_delete" />
 
-    <Button
-        android:id="@+id/btn_delete"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/edit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Delete"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:src="@drawable/ic_delete"
+        android:tint="#fff"
+        app:contentPadding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_city" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:src="@drawable/ic_edit"
+        android:tint="#fff"
+        app:contentPadding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/edit_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_marginTop="8dp"
-        android:background="#9e9e9e"
-        app:layout_constraintTop_toBottomOf="@id/btn_delete" />
+        android:background="#999"
+        app:layout_constraintTop_toBottomOf="@id/tv_city" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

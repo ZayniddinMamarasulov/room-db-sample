@@ -8,63 +8,67 @@
     android:paddingVertical="12dp"
     tools:context=".RoomActivity">
 
-    <Button
-        android:id="@+id/btn_add_book"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Add book"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_add_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Add author"
-        app:layout_constraintStart_toEndOf="@id/btn_add_book"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_authors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Authors"
-        app:layout_constraintStart_toEndOf="@id/btn_add_author"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_students"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Students"
-        app:layout_constraintStart_toEndOf="@id/btn_add_book"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_author" />
-
-    <Button
-        android:id="@+id/btn_rent_book"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Rent book"
-        app:layout_constraintStart_toEndOf="@id/btn_students"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_author" />
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_students"
-        tools:itemCount="10"
+        app:layout_constraintBottom_toTopOf="@id/btn_authors"
+        app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_book" />
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/btn_authors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:src="@drawable/ic_person"
+        android:tint="#fff"
+        app:contentPadding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/btn_books"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:src="@drawable/ic_book_pages"
+        android:tint="#fff"
+        app:contentPadding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_authors"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/btn_add_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:src="@drawable/ic_add_user"
+        android:tint="#fff"
+        app:contentPadding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_add_book"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/btn_add_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:src="@drawable/ic_book"
+        android:tint="#fff"
+        app:contentPadding="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
